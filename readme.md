@@ -73,6 +73,7 @@ danbooru_tag,e621_tag,jp_tagは""（ダブルクオーテーション）で囲�
 これを利用することでdanbooruではAとしか表現されていないものが、e621ではB1,B2,B3のように表現されている、といった状態を記述できます。
 
 現状作者の技術力不足により各要素数が異なる場合、エラーとなります。強制終了などは起こさないと思いますが、多対多でユーザー辞書に記述する際はdanbooru_tag,e621_tag,jp_tagの要素数を同じにすることをオススメします。
+
 ![testcase.jpg](screenshot%2Ftestcase.jpg)
 
 # Libraries usage

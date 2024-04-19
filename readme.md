@@ -6,7 +6,8 @@ danbooru　wikiに登録されているタグ（いわゆるdanbooru語）とe62
 ユーザー辞書による任意の組み合わせにも対応しています。
 
 # 起動方法
-guiフォルダ下のgui.exeをダブルクリックで起動できます。python3.10以降の実行環境がある方はgui.pyから直接起動したほうが若干早いかも？
+guiフォルダ下のgui.exeをダブルクリックで起動できます。  
+python3.10以降の実行環境がある方はgui.pyから直接起動したほうが若干早いかも？
 
 ## gui.pyの制作環境
 python 3.10.6  
@@ -43,32 +44,37 @@ wikiのタグページのリンクを表示します。クリックで移動も�
 
 # Index と Aliasesについて
 danbooru,e621どちらも、IndexタグとAliasesタグというものが存在します。
+
 danbooruの例  
 index:1girl  
 aliases:1girls,sole_female  
 
 一つの状況（この場合、1人の女の子が表示されてる）を表すのにいくつかの表現が該当する場合があります。  
-このいくつかの表現のうち、1個のタグを代表として、ほか全てのタグを言い換え表現として記載することでdanbooru,e621 wikiは記述の重複などを防いでいます。
+このいくつかの表現のうち、1個のタグを代表として、ほか全てのタグを言い換え表現として記載することで、danbooru,e621 wikiは記述の重複などを防いでいます。
+
 当ツールでは代表となるタグをIndex(タグ)、言い換え表現としてまとめられているものをAliases（タグ）と便宜的に呼んでいます。
 
 danbooru wiki と e621 wiki　それぞれでどの単語をIndexとし、何をAliasesとするかが異なるため、（日本語から見ると）同じ意味の単語が異なる表現でdanbooru,e621に登録されている場合があります。
 
 当ツールでは入力されたタグからIndex,Aliasesを生成し、対となる辞書のIndex,Aliasesと突合することでdanbooru e621間の変換を行っています。
+
+例:danbooru語ではfutanariがe621ではintersexと表示される
+
 ![moshikizu.jpg](screenshot%2Fmoshikizu.jpg)
 
 
 # ユーザー辞書
 userdict.csvを編集することで、検索結果を変更することができます。
 ![userdict.jpg](screenshot%2Fuserdict.jpg)
-## タグ同士のつながりを再定義する
+## ケース１：タグ同士のつながりを再定義する
 danbooru_tagu,e621_tag,jp_tag　それぞれの項目に要素を入力することで検索結果を変更することができます。
 上記画像ではdanbooru側で1girlを検索した際、e621の結果をsoloに書き換えています。
 
-## jptagを修正する
+## ケース２：jptagを修正する
 danbooru_tag,e621_tagのいずれか1つとjp_tagを入力することで、検索結果で表示されるjptagを変更できます。
 上記画像ではfutanariのjptagをフタナリに修正しています。
 
-## 多対多対応の表記
+## ケース３多対多対応の表記
 danbooru_tag,e621_tag,jp_tagは""（ダブルクオーテーション）で囲むことで複数の要素を記述することができます。  
 これを利用することでdanbooruではAとしか表現されていないものが、e621ではB1,B2,B3のように表現されている、といった状態を記述できます。
 
@@ -77,7 +83,7 @@ danbooru_tag,e621_tag,jp_tagは""（ダブルクオーテーション）で囲�
 ![testcase.jpg](screenshot%2Ftestcase.jpg)
 
 # Libraries usage
-pandas  
+### pandas  
 BSD 3-Clause License
 
 Copyright (c) 2008-2011, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team
@@ -110,14 +116,16 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-booru-japanese-tag  
+### booru-japanese-tag  
 https://github.com/boorutan/booru-japanese-tag  
+
 danbooru-machine-jp.csv,danbooru-only-machine-jp.csv,danbooru-jp.csvを利用させていただきました。感謝。
 
 MIT license  
 https://github.com/boorutan/booru-japanese-tag/blob/main/LICENSE
 
-a1111-sd-webui-tagcomplete  
+### a1111-sd-webui-tagcomplete  
+
 https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
 danbooru.csv,e621.csvを利用させていただきました。感謝。  
 

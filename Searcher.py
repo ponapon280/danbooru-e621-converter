@@ -17,8 +17,8 @@ class Searcher:
         self.default_userdict["danbooru_tag"] = self.default_userdict["danbooru_tag"].str.split(',')
         self.default_userdict["e621_tag"] = self.default_userdict["e621_tag"].str.split(',')
         self.default_userdict["jp_tag"] = self.default_userdict["jp_tag"].str.split(',')
-        if os.path.isfile('../../userdict.csv'):
-            self.userdict = pd.read_csv('../../userdict.csv')
+        if os.path.isfile('userdict.csv'):
+            self.userdict = pd.read_csv('userdict.csv')
             self.userdict = self.userdict.fillna("")
             self.userdict["danbooru_tag"] = self.userdict["danbooru_tag"].str.split(',')
             self.userdict["e621_tag"] = self.userdict["e621_tag"].str.split(',')

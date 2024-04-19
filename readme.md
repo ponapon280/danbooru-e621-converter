@@ -128,6 +128,7 @@ https://github.com/boorutan/booru-japanese-tag/blob/main/LICENSE
 ### a1111-sd-webui-tagcomplete  
 
 https://github.com/DominikDoom/a1111-sd-webui-tagcomplete
+
 danbooru.csv,e621.csvを利用させていただきました。感謝。  
 
 MIT License  
